@@ -1,0 +1,46 @@
+<div class="claimant_form">
+  <div class="claimant_form_header">
+    <div class="header">
+      <h3>Claimant Info Form</h3>
+    </div>
+    <div class="close"></div>
+  </div>
+  <div class="claimant_form_content">
+    <div class="claimant_form_field">
+      <label for="claimant.firstName">First Name</label>
+      <input type="text" id="claimant.firstName" [(ngModel)]="curClaimant.firstName" />
+    </div>
+    <div class="claimant_form_field">
+      <label for="claimant.middleName">Middle Name</label>
+      <input type="text" id="claimant.middleName" [(ngModel)]="curClaimant.middleName" />
+    </div>
+    <div class="claimant_form_field">
+      <label for="claimant.lastName">Last Name</label>
+      <input type="text" id="claimant.lastName" [(ngModel)]="curClaimant.lastName" />
+    </div>
+    <div class="claimant_form_field">
+      <label for="claimant.address1">Address</label>
+      <input type="text" id="claimant.address1" [(ngModel)]="curClaimant.address1" />
+    </div>
+    <div class="claimant_form_field">
+      <label for="claimant.address1"></label>
+      <input type="text" id="claimant.address2" [(ngModel)]="curClaimant.address2" />
+    </div>
+    <div class="claimant_form_field">
+      <label for="claimant.city">City</label>
+      <input type="text" id="claimant.city" [(ngModel)]="curClaimant.city" />
+    </div>
+    <div class="claimant_form_field">
+      <label>State</label>
+      <input type="text" id="claimant.state" [(ngModel)]="curClaimant.state" />
+    </div>
+    <div class="claimant_form_field">
+      <label>Zip Code</label>
+      <input type="text" id="claimant.zip" [(ngModel)]="curClaimant.zip" />
+    </div>
+  </div>
+  <div class="claimant_form_buttons">
+    <button (click)="onCancel()">Cancel</button>
+    <button (click)="onSave()" type="submit" tabindex="0">Save</button>
+  </div>
+</div>

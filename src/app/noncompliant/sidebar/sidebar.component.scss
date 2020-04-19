@@ -1,0 +1,22 @@
+:host {
+	width: 200px;
+	height: 900px;
+	background-color: brown;
+	display: flex;
+	flex-direction: column;
+}
+
+.container_header {
+	background-color: dodgerblue;
+}
+
+.container_items {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+}
+
+.container_item {
+	padding: 3px;
+	margin: 3px;
+}

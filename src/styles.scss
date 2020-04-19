@@ -1,0 +1,10 @@
+@import '~bootstrap/scss/bootstrap';
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control, .custom-select {
+    font-size: 14px;
+}
