@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Claimant } from './models/claimant';
+
 @Component({
   selector: 'alp-noncompliant',
   templateUrl: './noncompliant.component.html',

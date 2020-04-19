@@ -1,0 +1,73 @@
+:host {
+	height: 100%;
+}
+
+.claimant_form {
+	width: 500px;
+	position: relative;
+	top: 15%;
+	left: 25%;
+	background-color: darkgreen;
+	border: 2px;
+}
+
+.claimant_form_header {
+	width: 100%;
+	background-color: gray;
+	display: flex;
+}
+
+.claimant_form_header > .header {
+	width: 100%;
+	margin: 5px 0 0 15px 
+}
+
+.close {
+  position: relative;
+  right: 30px;
+  top: 8px;
+  width: 8px;
+  height: 16px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.claimant_form_content {
+	padding: 20px 0 0 40px;
+}
+.claimant_form_field {
+	padding: 0 0 10px 0;
+}
+
+.claimant_form_field > label {
+	width: 120px;
+}
+
+.claimant_form_field > input {
+
+}
+
+.claimant_form_buttons {
+	display: flex;
+	justify-content: right;
+}
+
+.claimant_form_buttons > button {
+	margin: 5px;
+}
