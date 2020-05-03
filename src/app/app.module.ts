@@ -19,6 +19,7 @@ import { PersonnelFormComponent } from './noncompliant/personnel-form/personnel-
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     AppRoutingModule,
     MatFormFieldModule,
     FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
