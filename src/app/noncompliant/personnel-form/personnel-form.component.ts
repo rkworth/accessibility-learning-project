@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Claimant } from '../models/claimant';
 
@@ -9,23 +9,37 @@ import { Claimant } from '../models/claimant';
 })
 export class PersonnelFormComponent {
 
-  curClaimant: Claimant;
-  constructor() {
-    this.curClaimant = new Object();
-    this.curClaimant.firstName = "First";
-    this.curClaimant.lastName = "Claimant";
-    this.curClaimant.address1 = "123 Fake St";
-    this.curClaimant.city = "hooville";
-    this.curClaimant.state = "Deleware"
-    this.curClaimant.zip = "60652";
-  }
+	curClaimant: Claimant;
+	oldClaimant: Claimant;
 
-  onCancel() {
+	constructor() {
+		this.curClaimant = new Object();
+		this.oldClaimant = new Object();
+	}
 
-  }
+	onCancel(): void {
+		this.hide();
+	}
 
-  onSave() {
+	onSave(): void {
+		Object.assign(this.oldClaimant, this.curClaimant);
+		this.hide();
+	}
 
-  }
+	show(): void {
+		document.getElementById('claimant_form').style.display = 'block';
+		document.getElementById('shroud').style.display = 'block';
+	}
 
+	hide(): void {
+		document.getElementById('claimant_form').style.display = 'none';
+		document.getElementById('shroud').style.display = 'none';
+	}
+ 
+
+	setClaimant(claimant: Claimant): void {
+		this.oldClaimant = claimant;
+		this.curClaimant = Object.assign({}, claimant);
+	}
+  
 }
