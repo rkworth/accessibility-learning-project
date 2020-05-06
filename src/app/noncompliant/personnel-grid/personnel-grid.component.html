@@ -1,3 +1,4 @@
+<button (click)="onAdd()" class="add-button">Add</button>
 <button (click)="onEdit()" [disabled]="!selection.hasValue()" class="edit-button">Edit</button>
 <button (click)="onDelete()" [disabled]="!selection.hasValue()" class="delete-button">Delete</button>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 personnel-grid">

@@ -55,6 +55,14 @@ export class PersonnelGridComponent implements OnInit {
 		this.selection.select(row);
 	}
 	
+	onAdd(): void {
+		var newClaimant:Claimant = {};
+		newClaimant.id = this.data.length + 1;
+		this.data.push(newClaimant);
+		this.doSelect(newClaimant);
+		this.onEdit();
+	}
+	
 	onEdit(): void {
 		this.openPersonnelForm(this.selection.selected[0]);
 	}
