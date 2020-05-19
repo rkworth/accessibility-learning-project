@@ -33,4 +33,4 @@
   <tr mat-header-row *matHeaderRowDef="headers"></tr>
   <tr mat-row [ngClass]="{'highlight': selection.isSelected(row)}" *matRowDef="let row; columns: headers;" (click)="doSelect(row)"></tr>
 </table>
-<alp-personnel-form #personnelForm></alp-personnel-form>
+<alp-compliant-personnel-form #personnelForm></alp-compliant-personnel-form>

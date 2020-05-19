@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { Claimant } from '../models/claimant';
 
 @Component({
-  selector: 'alp-personnel-form',
+  selector: 'alp-noncompliant-personnel-form',
   templateUrl: './personnel-form.component.html',
   styleUrls: ['./personnel-form.component.scss']
 })
-export class PersonnelFormComponent {
+export class NoncompliantPersonnelFormComponent {
 
 	curClaimant: Claimant;
 	oldClaimant: Claimant;

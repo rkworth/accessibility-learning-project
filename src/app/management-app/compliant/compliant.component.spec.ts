@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PersonnelFormComponent } from './personnel-form.component';
+import { ManagementCompliantComponent } from './compliant.component';
 
-describe('PersonnelFormComponent', () => {
-  let component: PersonnelFormComponent;
-  let fixture: ComponentFixture<PersonnelFormComponent>;
+describe('compliantComponent', () => {
+  let component: ManagementCompliantComponent;
+  let fixture: ComponentFixture<ManagementCompliantComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PersonnelFormComponent ]
+      declarations: [ ManagementCompliantComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PersonnelFormComponent);
+    fixture = TestBed.createComponent(ManagementCompliantComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

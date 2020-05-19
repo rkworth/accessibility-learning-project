@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
-import { NoncompliantComponent } from './noncompliant/noncompliant.component';
+import { ManagementComponent } from './management-app/management.component'
+import { ManagementNoncompliantComponent } from './management-app/noncompliant/noncompliant.component';
 import { CompliantComponent } from './compliant/compliant.component';
 import { ResourcesComponent } from './resources/resources.component';
-import { SidebarComponent } from './noncompliant/sidebar/sidebar.component';
-import { HeaderComponent } from './noncompliant/header/header.component';
-import { MenubarComponent } from './noncompliant/menubar/menubar.component';
-import { PersonnelGridComponent } from './noncompliant/personnel-grid/personnel-grid.component';
-import { PersonnelFormComponent } from './noncompliant/personnel-form/personnel-form.component';
+import { SidebarComponent } from './management-app/noncompliant/sidebar/sidebar.component';
+import { HeaderComponent } from './management-app/noncompliant/header/header.component';
+import { MenubarComponent } from './management-app/noncompliant/menubar/menubar.component';
+import { NoncompliantPersonnelGridComponent } from './management-app/noncompliant/personnel-grid/personnel-grid.component';
+import { NoncompliantPersonnelFormComponent } from './management-app/noncompliant/personnel-form/personnel-form.component';
 
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
@@ -29,14 +30,15 @@ import { CdkTableModule } from '@angular/cdk/table';
   declarations: [
     AppComponent,
     HomeComponent,
-    NoncompliantComponent,
+    ManagementComponent,
+    ManagementNoncompliantComponent,
     CompliantComponent,
     ResourcesComponent,
     SidebarComponent,
     HeaderComponent,
     MenubarComponent,
-    PersonnelGridComponent,
-    PersonnelFormComponent
+    NoncompliantPersonnelGridComponent,
+    NoncompliantPersonnelFormComponent
   ],
   imports: [
     BrowserModule,

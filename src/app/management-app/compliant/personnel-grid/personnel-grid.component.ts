@@ -3,18 +3,18 @@ import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SelectionModel } from '@angular/cdk/collections';
 
-import { PersonnelFormComponent } from '../personnel-form/personnel-form.component';
+import { NoncompliantPersonnelFormComponent } from '../personnel-form/personnel-form.component';
 import { Claimant } from '../models/claimant';
 
 import { Observable, of, from } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'alp-personnel-grid',
+  selector: 'alp-compliant-personnel-grid',
   templateUrl: './personnel-grid.component.html',
   styleUrls: ['./personnel-grid.component.scss']
 })
-export class PersonnelGridComponent implements OnInit {
+export class NoncompliantPersonnelGridComponent implements OnInit {
 	
 	@ViewChild('personnelForm') personnelForm;
 	

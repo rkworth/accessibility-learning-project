@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "alp-noncompliant",
+  selector: "alp-management-noncompliant",
   templateUrl: "./noncompliant.component.html",
   styleUrls: ["./noncompliant.component.scss"],
 })
-export class NoncompliantComponent implements OnInit {
+export class ManagementNoncompliantComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
