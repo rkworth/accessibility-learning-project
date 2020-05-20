@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
-import { ManagementAppRoutingModule } from './management-routing.module'; 
+import { ManagementAppRoutingModule } from './management-routing.module';
 
 import { ManagementComponent } from './management.component'
 import { ManagementCompliantComponent } from './compliant/compliant.component';
@@ -37,7 +36,6 @@ import { NoncompliantPersonnelFormComponent } from './noncompliant/personnel-for
   ],
   imports: [
     ManagementAppRoutingModule,
-    RouterModule,
     BrowserModule,
     MatTableModule,
     FormsModule
