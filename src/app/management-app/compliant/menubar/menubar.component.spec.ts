@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenubarComponent } from './menubar.component';
+import { CompliantMenubarComponent } from './menubar.component';
 
-describe('MenubarComponent', () => {
-  let component: MenubarComponent;
-  let fixture: ComponentFixture<MenubarComponent>;
+describe('CompliantMenubarComponent', () => {
+  let component: CompliantMenubarComponent;
+  let fixture: ComponentFixture<CompliantMenubarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenubarComponent ]
+      declarations: [ CompliantMenubarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenubarComponent);
+    fixture = TestBed.createComponent(CompliantMenubarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

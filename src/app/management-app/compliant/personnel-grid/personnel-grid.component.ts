@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SelectionModel } from '@angular/cdk/collections';
 
-import { NoncompliantPersonnelFormComponent } from '../personnel-form/personnel-form.component';
+import { CompliantPersonnelFormComponent } from '../personnel-form/personnel-form.component';
 import { Claimant } from '../models/claimant';
 
 import { Observable, of, from } from 'rxjs';
@@ -14,7 +14,7 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './personnel-grid.component.html',
   styleUrls: ['./personnel-grid.component.scss']
 })
-export class NoncompliantPersonnelGridComponent implements OnInit {
+export class CompliantPersonnelGridComponent implements OnInit {
 	
 	@ViewChild('personnelForm') personnelForm;
 	

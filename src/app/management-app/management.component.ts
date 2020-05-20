@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+enum AppType {
+  Compliant = "Compliant",
+  Noncompliant = "Noncompliant"
+}
 
 @Component({
   selector: 'alp-management',
@@ -6,9 +12,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./management.component.scss']
 })
 export class ManagementComponent implements OnInit {
-
-  constructor() { }
+  
+  public currentApp: AppType = AppType.Noncompliant;
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+
+  }
+
+  switchApps() {
+    if (this.currentApp === AppType.Noncompliant) {
+      this.router.navigate(['compliant'], { relativeTo: this.route });
+      this.currentApp = AppType.Compliant;
+    } else if (this.currentApp === AppType.Compliant) {
+      this.router.navigate(['noncompliant'], { relativeTo: this.route });
+      this.currentApp = AppType.Noncompliant;
+    }
   }
 }

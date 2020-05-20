@@ -1,3 +1,6 @@
-<div>
+<div class="content" role="main">
+    <p class="compliant-status">
+        Currently viewing {{currentApp}} Application. <a [routerLink]="" (click)="switchApps()">Click here to switch.</a>
+    </p>
     <router-outlet></router-outlet>
 </div>

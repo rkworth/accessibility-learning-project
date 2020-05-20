@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoncompliantPersonnelFormComponent } from './personnel-form.component';
+import { CompliantPersonnelFormComponent } from './personnel-form.component';
 
-describe('NoncompliantPersonnelFormComponent', () => {
-  let component: NoncompliantPersonnelFormComponent;
-  let fixture: ComponentFixture<NoncompliantPersonnelFormComponent>;
+describe('CompliantPersonnelFormComponent', () => {
+  let component: CompliantPersonnelFormComponent;
+  let fixture: ComponentFixture<CompliantPersonnelFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoncompliantPersonnelFormComponent ]
+      declarations: [ CompliantPersonnelFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NoncompliantPersonnelFormComponent);
+    fixture = TestBed.createComponent(CompliantPersonnelFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

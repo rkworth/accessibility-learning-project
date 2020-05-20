@@ -7,7 +7,7 @@ import { Claimant } from '../models/claimant';
   templateUrl: './personnel-form.component.html',
   styleUrls: ['./personnel-form.component.scss']
 })
-export class NoncompliantPersonnelFormComponent {
+export class CompliantPersonnelFormComponent {
 
 	curClaimant: Claimant;
 	oldClaimant: Claimant;

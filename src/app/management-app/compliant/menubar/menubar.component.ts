@@ -5,4 +5,4 @@ import { Component } from "@angular/core";
   templateUrl: "./menubar.component.html",
   styleUrls: ["./menubar.component.scss"],
 })
-export class MenubarComponent {}
+export class CompliantMenubarComponent {}
