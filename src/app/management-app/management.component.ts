@@ -13,11 +13,12 @@ enum AppType {
 })
 export class ManagementComponent implements OnInit {
   
-  public currentApp: AppType = AppType.Noncompliant;
+  public currentApp: AppType;
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-
+    const url = window.location.pathname;
+    this.currentApp = url.includes('noncompliant') ? AppType.Noncompliant : AppType.Compliant;
   }
 
   switchApps() {

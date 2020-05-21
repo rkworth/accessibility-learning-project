@@ -1,9 +1,9 @@
 <div id="claimant_form">
   <div class="claimant_form_header">
     <div class="header">
-      <h3>Claimant Info Form</h3>
+      <h3 #title tabindex="0">Claimant Info Form</h3>
     </div>
-    <div class="close"></div>
+    <div class="close" (click)="onCancel()" tabindex="0" aria-label="Close" role="button"></div>
   </div>
   <div class="claimant_form_content">
     <div class="claimant_form_field">

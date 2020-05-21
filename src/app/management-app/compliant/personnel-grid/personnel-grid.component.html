@@ -1,5 +1,5 @@
-<button (click)="onAdd()" class="add-button">Add</button>
-<button (click)="onEdit()" [disabled]="!selection.hasValue()" class="edit-button">Edit</button>
+<button (click)="onAdd($event)" class="add-button">Add</button>
+<button (click)="onEdit($event)" [disabled]="!selection.hasValue()" class="edit-button">Edit</button>
 <button (click)="onDelete()" [disabled]="!selection.hasValue()" class="delete-button">Delete</button>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 personnel-grid">
 
@@ -33,4 +33,4 @@
   <tr mat-header-row *matHeaderRowDef="headers"></tr>
   <tr mat-row [ngClass]="{'highlight': selection.isSelected(row)}" *matRowDef="let row; columns: headers;" (click)="doSelect(row)"></tr>
 </table>
-<alp-compliant-personnel-form #personnelForm></alp-compliant-personnel-form>
+<alp-compliant-personnel-form #personnelForm (formClosed)="formClosed()"></alp-compliant-personnel-form>

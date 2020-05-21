@@ -22,19 +22,20 @@
 
 .claimant_form_header > .header {
 	width: 100%;
-	margin: 5px 0 0 15px 
+	margin: 8px 15px 0;
 }
 
 .close {
   position: relative;
-  right: 30px;
+  right: 10px;
   top: 8px;
-  width: 8px;
-  height: 16px;
+  width: 33px;
+  height: 33px;
   opacity: 0.3;
 }
 .close:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .close:before, .close:after {
   position: absolute;

@@ -42,8 +42,8 @@ export class CompliantPersonnelGridComponent implements OnInit {
 	private subject = new BehaviorSubject<Claimant[]>(this.data);
 	
 	dataSource: Observable<Claimant[]> = this.subject.asObservable();
-	
 	selection = new SelectionModel<Claimant>(true, []);
+	closeFocusEl;
 	
 	constructor(private cdr: ChangeDetectorRef) { }
 
@@ -55,15 +55,16 @@ export class CompliantPersonnelGridComponent implements OnInit {
 		this.selection.select(row);
 	}
 	
-	onAdd(): void {
+	onAdd(event): void {
 		var newClaimant:Claimant = {};
 		newClaimant.id = this.data.length + 1;
 		this.data.push(newClaimant);
 		this.doSelect(newClaimant);
-		this.onEdit();
+		this.onEdit(event);
 	}
 	
-	onEdit(): void {
+	onEdit(event): void {
+		this.closeFocusEl = event.target;
 		this.openPersonnelForm(this.selection.selected[0]);
 	}
 	
@@ -81,6 +82,12 @@ export class CompliantPersonnelGridComponent implements OnInit {
 	openPersonnelForm(claimant: Claimant): void {
 		this.personnelForm.setClaimant(claimant);
 		this.personnelForm.show();
+	}
+
+	formClosed() {
+		this.closeFocusEl.focus();
+		this.closeFocusEl = null;
+		this.subject.next(this.data);
 	}
 	
 }

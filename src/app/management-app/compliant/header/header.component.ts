@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'alp-compliant-header',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class CompliantHeaderComponent implements OnInit {
+  @ViewChild('title', {static: true}) title: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  focusTitle() {
+    this.title.nativeElement.focus();
+  }
 }

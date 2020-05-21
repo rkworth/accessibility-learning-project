@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 import { Claimant } from '../models/claimant';
 
@@ -8,7 +8,9 @@ import { Claimant } from '../models/claimant';
   styleUrls: ['./personnel-form.component.scss']
 })
 export class CompliantPersonnelFormComponent {
-
+	@ViewChild('title', {static: true}) title: ElementRef;
+	@Output() formClosed = new EventEmitter();
+	
 	curClaimant: Claimant;
 	oldClaimant: Claimant;
 
@@ -29,17 +31,22 @@ export class CompliantPersonnelFormComponent {
 	show(): void {
 		document.getElementById('claimant_form').style.display = 'block';
 		document.getElementById('shroud').style.display = 'block';
+		this.focusTitle();
 	}
 
 	hide(): void {
 		document.getElementById('claimant_form').style.display = 'none';
 		document.getElementById('shroud').style.display = 'none';
+		this.formClosed.emit();
 	}
  
-
 	setClaimant(claimant: Claimant): void {
 		this.oldClaimant = claimant;
 		this.curClaimant = Object.assign({}, claimant);
+	}
+
+	focusTitle() {
+		this.title.nativeElement.focus();
 	}
   
 }
