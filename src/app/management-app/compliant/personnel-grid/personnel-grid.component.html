@@ -3,7 +3,7 @@
 <button (click)="onDelete()" [disabled]="!selection.hasValue()" class="delete-button">Delete</button>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 personnel-grid"
   [attr.aria-rowcount]="(dataSource| async)?.length"
-  [attr.aria-colcount]="4"
+  [attr.aria-colcount]="headers.length"
 >
 
   <!--- Note that these columns can be defined in any order.
