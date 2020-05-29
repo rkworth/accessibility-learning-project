@@ -1,7 +1,7 @@
 <div id="claimant_form">
   <div class="claimant_form_header">
     <div class="header">
-      <h3 #title tabindex="0">Claimant Info Form</h3>
+      <h2 #title tabindex="0">Claimant Info Form</h2>
     </div>
     <div class="close" (click)="onCancel()" tabindex="0" aria-label="Close" role="button"></div>
   </div>
@@ -19,11 +19,11 @@
       <input type="text" id="claimant.lastName" [(ngModel)]="curClaimant.lastName" />
     </div>
     <div class="claimant_form_field">
-      <label for="claimant.address1">Address</label>
+      <label for="claimant.address1">Address Line 1</label>
       <input type="text" id="claimant.address1" [(ngModel)]="curClaimant.address1" />
     </div>
     <div class="claimant_form_field">
-      <label for="claimant.address1"></label>
+      <label for="claimant.address2">Address Line 2</label>
       <input type="text" id="claimant.address2" [(ngModel)]="curClaimant.address2" />
     </div>
     <div class="claimant_form_field">
@@ -31,11 +31,11 @@
       <input type="text" id="claimant.city" [(ngModel)]="curClaimant.city" />
     </div>
     <div class="claimant_form_field">
-      <label>State</label>
+      <label for="claimant.state">State</label>
       <input type="text" id="claimant.state" [(ngModel)]="curClaimant.state" />
     </div>
     <div class="claimant_form_field">
-      <label>Zip Code</label>
+      <label for="claimant.zip">Zip Code</label>
       <input type="text" id="claimant.zip" [(ngModel)]="curClaimant.zip" />
     </div>
   </div>
