@@ -2,7 +2,6 @@ import { CdkTableModule } from "@angular/cdk/table";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatTableModule } from "@angular/material/table";
 import { MatTabsModule } from "@angular/material/tabs";
 import { BrowserModule } from "@angular/platform-browser";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
@@ -18,7 +17,6 @@ import { ManagementAppModule } from "./management-app/management.module";
   imports: [
     ManagementAppModule,
     BrowserModule,
-    MatTableModule,
     MatTabsModule,
     CdkTableModule,
     AppRoutingModule,
