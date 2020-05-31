@@ -1,16 +1,19 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ManagementComponent } from "./management.component";
 import { ManagementCompliantComponent } from "./compliant/compliant.component";
+import { CompliantEmptyPageComponent } from "./compliant/empty-page/empty-page.component";
 import { CompliantPersonnelFormComponent } from "./compliant/personnel-form/personnel-form.component";
 import { CompliantPersonnelGridComponent } from "./compliant/personnel-grid/personnel-grid.component";
+import { ManagementComponent } from "./management.component";
+import { NoncompliantEmptyPageComponent } from "./noncompliant/empty-page/empty-page.component";
 import { ManagementNoncompliantComponent } from "./noncompliant/noncompliant.component";
 import { NoncompliantPersonnelFormComponent } from "./noncompliant/personnel-form/personnel-form.component";
 import { NoncompliantPersonnelGridComponent } from "./noncompliant/personnel-grid/personnel-grid.component";
 
 const routes: Routes = [
-  { path: "management",
-    component: ManagementComponent, 
+  {
+    path: "management",
+    component: ManagementComponent,
     children: [
       {
         path: "noncompliant",
@@ -18,11 +21,20 @@ const routes: Routes = [
         children: [
           {
             path: "personnel",
-            component: NoncompliantPersonnelGridComponent
+            component: NoncompliantPersonnelGridComponent,
           },
           {
             path: "form",
-            component: NoncompliantPersonnelFormComponent
+            component: NoncompliantPersonnelFormComponent,
+          },
+          {
+            path: "empty",
+            component: NoncompliantEmptyPageComponent,
+          },
+          {
+            path: "",
+            redirectTo: "personnel",
+            pathMatch: "full",
           },
         ],
       },
@@ -32,16 +44,25 @@ const routes: Routes = [
         children: [
           {
             path: "personnel",
-            component: CompliantPersonnelGridComponent
+            component: CompliantPersonnelGridComponent,
           },
           {
             path: "form",
-            component: CompliantPersonnelFormComponent
+            component: CompliantPersonnelFormComponent,
+          },
+          {
+            path: "empty",
+            component: CompliantEmptyPageComponent,
+          },
+          {
+            path: "",
+            redirectTo: "personnel",
+            pathMatch: "full",
           },
         ],
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
 
 @NgModule({
