@@ -19,12 +19,11 @@
       <input type="text" id="claimant.lastName" [(ngModel)]="curClaimant.lastName" />
     </div>
     <div class="claimant_form_field">
-      <label for="claimant.address1">Address</label>
-      <input type="text" id="claimant.address1" [(ngModel)]="curClaimant.address1" />
+      <label for="claimant.address">Address</label>
+      <input type="text" id="claimant.address" [(ngModel)]="curClaimant.address1" />
     </div>
     <div class="claimant_form_field">
-      <label for="claimant.address1"></label>
-      <input type="text" id="claimant.address2" [(ngModel)]="curClaimant.address2" />
+      <input type="text" id="claimant.address" [(ngModel)]="curClaimant.address2" />
     </div>
     <div class="claimant_form_field">
       <label for="claimant.city">City</label>
@@ -41,7 +40,7 @@
   </div>
   <div class="claimant_form_buttons">
     <button (click)="onCancel()">Cancel</button>
-    <button (click)="onSave()" type="submit" tabindex="0">Save</button>
+    <button (click)="onSave()" type="submit" tabindex="1">Save</button>
   </div>
 </div>
 <div id="shroud" class="shroud"></div>
