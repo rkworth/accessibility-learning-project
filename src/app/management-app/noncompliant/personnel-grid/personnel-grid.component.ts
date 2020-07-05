@@ -1,5 +1,5 @@
 import { SelectionModel } from "@angular/cdk/collections";
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { Claimant } from "../models/claimant";
 
@@ -8,7 +8,7 @@ import { Claimant } from "../models/claimant";
   templateUrl: "./personnel-grid.component.html",
   styleUrls: ["./personnel-grid.component.scss"],
 })
-export class NoncompliantPersonnelGridComponent implements OnInit {
+export class NoncompliantPersonnelGridComponent {
   @ViewChild("personnelForm") personnelForm;
 
   headers = ["lastName", "firstName", "city", "state"];
@@ -37,7 +37,7 @@ export class NoncompliantPersonnelGridComponent implements OnInit {
       firstName: "Homer",
       middleName: "J",
       lastName: "Simpson",
-      city: "Springfeild",
+      city: "Springfield",
       state: "Idk",
       zip: "20212",
     },
@@ -165,10 +165,6 @@ export class NoncompliantPersonnelGridComponent implements OnInit {
   dataSource: Observable<Claimant[]> = this.subject.asObservable();
 
   selection = new SelectionModel<Claimant>(true, []);
-
-  constructor(private cdr: ChangeDetectorRef) {}
-
-  ngOnInit(): void {}
 
   doSelect(row): void {
     this.selection.clear();

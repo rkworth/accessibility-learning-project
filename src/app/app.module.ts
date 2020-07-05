@@ -1,8 +1,6 @@
 import { CdkTableModule } from "@angular/cdk/table";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatTabsModule } from "@angular/material/tabs";
 import { BrowserModule } from "@angular/platform-browser";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { ServiceWorkerModule } from "@angular/service-worker";
@@ -17,10 +15,8 @@ import { ManagementAppModule } from "./management-app/management.module";
   imports: [
     ManagementAppModule,
     BrowserModule,
-    MatTabsModule,
     CdkTableModule,
     AppRoutingModule,
-    MatFormFieldModule,
     FormsModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,

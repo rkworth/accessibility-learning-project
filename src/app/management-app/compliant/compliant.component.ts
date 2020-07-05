@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { CompliantHeaderComponent } from './header/header.component';
+import { CompliantHeaderComponent } from "./header/header.component";
 
 @Component({
   selector: "alp-management-compliant",
@@ -7,9 +7,8 @@ import { CompliantHeaderComponent } from './header/header.component';
   styleUrls: ["./compliant.component.scss"],
 })
 export class ManagementCompliantComponent implements OnInit {
-  @ViewChild(CompliantHeaderComponent, { static: true }) header: CompliantHeaderComponent;
-
-  constructor() {}
+  @ViewChild(CompliantHeaderComponent, { static: true })
+  header: CompliantHeaderComponent;
 
   ngOnInit(): void {
     this.header.focusTitle();

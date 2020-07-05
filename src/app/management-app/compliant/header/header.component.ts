@@ -1,17 +1,12 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from "@angular/core";
 
 @Component({
-  selector: 'alp-compliant-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "alp-compliant-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
-export class CompliantHeaderComponent implements OnInit {
-  @ViewChild('title', {static: true}) title: ElementRef;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class CompliantHeaderComponent {
+  @ViewChild("title", { static: true }) title: ElementRef;
 
   focusTitle() {
     this.title.nativeElement.focus();

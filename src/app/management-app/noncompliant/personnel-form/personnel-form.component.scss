@@ -1,28 +1,29 @@
 :host {
-	height: 100%;
+  height: 100%;
 }
 
 #claimant_form {
-	width: 500px;
-	position: fixed;
-	top: 15%;
-	left: 25%;
-	background-color: darkgreen;
-	border: 2px;
-	display: none;
-  	overflow: auto;
-  	z-index: 100;
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: darkgreen;
+  border: 2px;
+  display: none;
+  overflow: auto;
+  z-index: 100;
+  transform: translate(-50%, -50%);
 }
 
 .claimant_form_header {
-	width: 100%;
-	background-color: gray;
-	display: flex;
+  width: 100%;
+  background-color: gray;
+  display: flex;
 }
 
 .claimant_form_header > .header {
-	width: 100%;
-	margin: 5px 0 0 15px 
+  width: 100%;
+  margin: 5px 0 0 15px;
 }
 
 .close {
@@ -36,10 +37,11 @@
 .close:hover {
   opacity: 1;
 }
-.close:before, .close:after {
+.close:before,
+.close:after {
   position: absolute;
   left: 15px;
-  content: ' ';
+  content: " ";
   height: 33px;
   width: 2px;
   background-color: #333;
@@ -52,36 +54,35 @@
 }
 
 .claimant_form_content {
-	padding: 20px 0 0 40px;
+  padding: 20px 0 0 40px;
 }
 .claimant_form_field {
-	padding: 0 0 10px 0;
+  padding: 0 0 10px 0;
 }
 
 .claimant_form_field > label {
-	width: 120px;
+  width: 120px;
 }
 
 .claimant_form_field > input {
-
 }
 
 .claimant_form_buttons {
-	display: flex;
-	justify-content: right;
+  display: flex;
+  justify-content: right;
 }
 
 .claimant_form_buttons > button {
-	margin: 5px;
+  margin: 5px;
 }
 
 .shroud {
-	display: none;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(0,0,0,0.7);
-	z-index: 50;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 50;
 }
