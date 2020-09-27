@@ -1,4 +1,3 @@
-import { SelectionModel } from "@angular/cdk/collections";
 import { Component, ViewChild } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { Claimant } from "../models/claimant";
@@ -10,8 +9,6 @@ import { Claimant } from "../models/claimant";
 })
 export class NoncompliantPersonnelGridComponent {
   @ViewChild("personnelForm") personnelForm;
-
-  headers = ["lastName", "firstName", "city", "state"];
 
   data: Claimant[] = [
     {
@@ -61,9 +58,9 @@ export class NoncompliantPersonnelGridComponent {
     },
     {
       id: 6,
-      firstName: "Al",
+      firstName: "Joe",
       middleName: "",
-      lastName: "Coholhic",
+      lastName: "Exotic",
       city: "",
       state: "",
       zip: "",
@@ -164,30 +161,21 @@ export class NoncompliantPersonnelGridComponent {
 
   dataSource: Observable<Claimant[]> = this.subject.asObservable();
 
-  selection = new SelectionModel<Claimant>(true, []);
-
-  doSelect(row): void {
-    this.selection.clear();
-    this.selection.select(row);
-  }
-
   onAdd(): void {
     var newClaimant: Claimant = {};
     newClaimant.id = this.data.length + 1;
     this.data.push(newClaimant);
-    this.doSelect(newClaimant);
-    this.onEdit();
+    this.onEdit(newClaimant);
   }
 
-  onEdit(): void {
-    this.openPersonnelForm(this.selection.selected[0]);
+  onEdit(claimant: Claimant): void {
+    this.openPersonnelForm(claimant);
   }
 
-  onDelete(): void {
+  onDelete(claimant: Claimant): void {
     for (var i = 0; i < this.data.length; i++) {
-      if (this.data[i] === this.selection.selected[0]) {
+      if (this.data[i] === claimant) {
         this.data.splice(i, 1);
-        this.selection.clear();
         break;
       }
     }

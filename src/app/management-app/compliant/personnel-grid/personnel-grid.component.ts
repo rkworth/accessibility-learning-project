@@ -1,4 +1,3 @@
-import { SelectionModel } from "@angular/cdk/collections";
 import { Component, ViewChild } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { Claimant } from "../models/claimant";
@@ -10,8 +9,6 @@ import { Claimant } from "../models/claimant";
 })
 export class CompliantPersonnelGridComponent {
   @ViewChild("personnelForm") personnelForm;
-
-  headers = ["lastName", "firstName", "city", "state"];
 
   data: Claimant[] = [
     {
@@ -61,9 +58,9 @@ export class CompliantPersonnelGridComponent {
     },
     {
       id: 6,
-      firstName: "Al",
+      firstName: "Joe",
       middleName: "",
-      lastName: "Coholhic",
+      lastName: "Exotic",
       city: "",
       state: "",
       zip: "",
@@ -163,36 +160,30 @@ export class CompliantPersonnelGridComponent {
   private subject = new BehaviorSubject<Claimant[]>(this.data);
 
   dataSource: Observable<Claimant[]> = this.subject.asObservable();
-  selection = new SelectionModel<Claimant>(true, []);
   closeFocusEl;
 
-  doSelect(row): void {
-    this.selection.clear();
-    this.selection.select(row);
-  }
-
-  onAdd(event): void {
+  onAdd(focusElement: HTMLElement): void {
     var newClaimant: Claimant = {};
     newClaimant.id = this.data.length + 1;
     this.data.push(newClaimant);
-    this.doSelect(newClaimant);
-    this.onEdit(event);
+    this.onEdit(newClaimant, focusElement);
   }
 
-  onEdit(event): void {
-    this.closeFocusEl = event.target;
-    this.openPersonnelForm(this.selection.selected[0]);
+  onEdit(claimant: Claimant, focusElement: HTMLElement): void {
+    this.closeFocusEl = focusElement;
+    this.openPersonnelForm(claimant);
   }
 
-  onDelete(): void {
+  onDelete(claimant: Claimant, focusElement: HTMLElement): void {
+    this.closeFocusEl = focusElement;
     for (var i = 0; i < this.data.length; i++) {
-      if (this.data[i] === this.selection.selected[0]) {
+      if (this.data[i] === claimant) {
         this.data.splice(i, 1);
-        this.selection.clear();
         break;
       }
     }
     this.subject.next(this.data);
+    this.focusOnElement();
   }
 
   openPersonnelForm(claimant: Claimant): void {
@@ -200,20 +191,17 @@ export class CompliantPersonnelGridComponent {
     this.personnelForm.show();
   }
 
-  getAriaLabel(row: Claimant) {
-    return ` \
-        Row ${this.data.findIndex((x) => x.id === row.id) + 1} \
-        ${this.selection.isSelected(row) ? "Selected" : "Not Selected"} \
-        Last Name: ${row.lastName} \
-        First Name: ${row.firstName} \
-        City: ${row.city} \
-        State: ${row.state} \
-        `;
+  getPersonDisplayName(claimant: Claimant): string {
+    return `${claimant.lastName}, ${claimant.firstName}`;
   }
 
   formClosed() {
+    this.focusOnElement();
+    this.subject.next(this.data);
+  }
+
+  focusOnElement() {
     this.closeFocusEl.focus();
     this.closeFocusEl = null;
-    this.subject.next(this.data);
   }
 }

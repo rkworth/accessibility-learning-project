@@ -1,27 +1,30 @@
-<h2 class="text-left pl-2 pt-1">Personnel</h2>
+<h2 class="float-left mt-1">Personnel</h2>
 
-<button (click)="onAdd($event)" class="add-button">Add</button>
-<button (click)="onEdit($event)" [disabled]="!selection.hasValue()" class="edit-button">Edit</button>
-<button (click)="onDelete()" [disabled]="!selection.hasValue()" class="delete-button">Delete</button>
+<button (click)="onAdd(addButton)" class="add-button float-right" #addButton>
+  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+  Add Person
+</button>
 
-<table class="table table-hover border shadow" [attr.aria-rowcount]="(dataSource| async)?.length" [attr.aria-colcount]="headers.length">
+<table class="table table-hover border shadow">
   <thead>
-    <th scope="col">First Name</th>
+    <th scope="col">Id</th>
     <th scope="col">Last Name</th>
-    <th scope="col">City</th>
-    <th scope="col">State</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Actions</th>
   </thead>
   <tbody>
-    <tr *ngFor="let element of dataSource | async"
-      (click)="doSelect(element)"
-      [ngClass]="{'table-info': selection.isSelected(element)}"
-      [attr.aria-label]="getAriaLabel(element)"
-      tabindex="0"
-      (keyup.enter)="doSelect(element)">
-      <td>{{element.firstName}}</td>
+    <tr *ngFor="let element of dataSource | async">
+      <td>{{element.id}}</td>
       <td>{{element.lastName}}</td>
-      <td>{{element.city}}</td>
-      <td>{{element.state}}</td>
+      <td>{{element.firstName}}</td>
+      <td>
+        <button #editButton (click)="onEdit(element, editButton)" [attr.aria-label]="'Edit ' + getPersonDisplayName(element)">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        </button>
+        <button (click)="onDelete(element, addButton)" [attr.aria-label]="'Delete ' + getPersonDisplayName(element)">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

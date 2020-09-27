@@ -1,6 +1,6 @@
-import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
-
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { Claimant } from '../models/claimant';
+
 
 @Component({
   selector: 'alp-compliant-personnel-form',
@@ -10,7 +10,7 @@ import { Claimant } from '../models/claimant';
 export class CompliantPersonnelFormComponent {
 	@ViewChild('title', {static: true}) title: ElementRef;
 	@Output() formClosed = new EventEmitter();
-	
+
 	curClaimant: Claimant;
 	oldClaimant: Claimant;
 
@@ -39,7 +39,7 @@ export class CompliantPersonnelFormComponent {
 		document.getElementById('shroud').style.display = 'none';
 		this.formClosed.emit();
 	}
- 
+
 	setClaimant(claimant: Claimant): void {
 		this.oldClaimant = claimant;
 		this.curClaimant = Object.assign({}, claimant);
@@ -48,5 +48,4 @@ export class CompliantPersonnelFormComponent {
 	focusTitle() {
 		this.title.nativeElement.focus();
 	}
-  
 }
