@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Claimant } from "../models/claimant";
+declare const noncompliantDialog: any;
 
 @Component({
   selector: "alp-noncompliant-personnel-form",
@@ -14,24 +15,17 @@ export class NoncompliantPersonnelFormComponent {
     this.curClaimant = new Object();
     this.oldClaimant = new Object();
   }
-
-  onCancel(): void {
-    this.hide();
-  }
-
-  onSave(): void {
-    Object.assign(this.oldClaimant, this.curClaimant);
-    this.hide();
-  }
-
   show(): void {
-    document.getElementById("claimant_form").style.display = "block";
-    document.getElementById("shroud").style.display = "block";
+    noncompliantDialog.openDialog("editModal");
   }
 
-  hide(): void {
-    document.getElementById("claimant_form").style.display = "none";
-    document.getElementById("shroud").style.display = "none";
+  onClose(closeButton): void {
+    noncompliantDialog.closeDialog(closeButton);
+  }
+
+  onSave(closeButton) {
+    Object.assign(this.oldClaimant, this.curClaimant);
+    this.onClose(closeButton);
   }
 
   setClaimant(claimant: Claimant): void {

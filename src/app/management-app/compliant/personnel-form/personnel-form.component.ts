@@ -1,51 +1,40 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { Claimant } from '../models/claimant';
-
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from "@angular/core";
+import { Claimant } from "../models/claimant";
+declare const compliantDialog: any;
 
 @Component({
-  selector: 'alp-compliant-personnel-form',
-  templateUrl: './personnel-form.component.html',
-  styleUrls: ['./personnel-form.component.scss']
+  selector: "alp-compliant-personnel-form",
+  templateUrl: "./personnel-form.component.html",
+  styleUrls: ["./personnel-form.component.scss"],
 })
 export class CompliantPersonnelFormComponent {
-	@ViewChild('title', {static: true}) title: ElementRef;
-	@Output() formClosed = new EventEmitter();
+  @ViewChild("title", { static: true }) title: ElementRef;
+  @Output() formClosed = new EventEmitter();
 
-	curClaimant: Claimant;
-	oldClaimant: Claimant;
+  public curClaimant: Claimant;
+  public oldClaimant: Claimant;
 
-	constructor() {
-		this.curClaimant = new Object();
-		this.oldClaimant = new Object();
-	}
+  constructor() {
+    this.curClaimant = new Object();
+    this.oldClaimant = new Object();
+  }
 
-	onCancel(): void {
-		this.hide();
-	}
+  show(): void {
+    compliantDialog.openDialog("editModal", null, null);
+  }
 
-	onSave(): void {
-		Object.assign(this.oldClaimant, this.curClaimant);
-		this.hide();
-	}
+  setClaimant(claimant: Claimant): void {
+    this.oldClaimant = claimant;
+    this.curClaimant = Object.assign({}, claimant);
+  }
 
-	show(): void {
-		document.getElementById('claimant_form').style.display = 'block';
-		document.getElementById('shroud').style.display = 'block';
-		this.focusTitle();
-	}
+  onClose(closeButton): void {
+    compliantDialog.closeDialog(closeButton);
+    this.formClosed.emit();
+  }
 
-	hide(): void {
-		document.getElementById('claimant_form').style.display = 'none';
-		document.getElementById('shroud').style.display = 'none';
-		this.formClosed.emit();
-	}
-
-	setClaimant(claimant: Claimant): void {
-		this.oldClaimant = claimant;
-		this.curClaimant = Object.assign({}, claimant);
-	}
-
-	focusTitle() {
-		this.title.nativeElement.focus();
-	}
+  onSave(closeButton) {
+    Object.assign(this.oldClaimant, this.curClaimant);
+    this.onClose(closeButton);
+  }
 }

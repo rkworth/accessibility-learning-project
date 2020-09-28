@@ -2,87 +2,71 @@
   height: 100%;
 }
 
-#claimant_form {
-  width: 350px;
+*:focus {
+  outline: none;
+}
+
+#editModal {
+  box-sizing: border-box;
+  border: 1px solid #000;
+  background-color: #fff;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: darkgreen;
-  border: 2px;
-  display: none;
-  overflow: auto;
-  z-index: 100;
-  transform: translate(-50%, -50%);
-}
+  top: 3.25rem;
+  left: 50vw;
+  transform: translateX(-50%);
+  min-width: 350px;
+  min-height: auto;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 0 auto;
+  width: 400px;
 
-.claimant_form_header {
-  width: 100%;
-  background-color: gray;
-  display: flex;
-}
+  &.hidden {
+    display: none;
+  }
 
-.claimant_form_header > .header {
-  width: 100%;
-  margin: 5px 0 0 15px;
-}
+  .dialog-header {
+    width: 100%;
+    background-color: darkgray;
+    display: flex;
 
-.close {
-  position: relative;
-  right: 30px;
-  top: 8px;
-  width: 8px;
-  height: 16px;
-  opacity: 0.3;
-}
-.close:hover {
-  opacity: 1;
-}
-.close:before,
-.close:after {
-  position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  width: 2px;
-  background-color: #333;
-}
-.close:before {
-  transform: rotate(45deg);
-}
-.close:after {
-  transform: rotate(-45deg);
-}
+    .header {
+      width: 100%;
+      margin: 8px 15px 0;
 
-.claimant_form_content {
-  padding: 20px 0 0 40px;
-}
-.claimant_form_field {
-  padding: 0 0 10px 0;
-}
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
 
-.claimant_form_field > label {
-  width: 120px;
-}
+    .close {
+      position: relative;
+      right: 10px;
+      top: 8px;
+      width: 24px;
+      height: 24px;
+      opacity: 1;
 
-.claimant_form_field > input {
-}
+      &:hover {
+        opacity: 0.65;
+      }
+    }
+  }
 
-.claimant_form_buttons {
-  display: flex;
-  justify-content: right;
-}
+  .dialog-body {
+    padding: 25px 40px 15px 55px;
 
-.claimant_form_buttons > button {
-  margin: 5px;
-}
+    label {
+      width: 120px;
+      font-weight: 600;
+    }
+  }
 
-.shroud {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 50;
+  .dialog-footer {
+    text-align: right;
+    padding: 0 20px 20px;
+
+    button {
+      margin: 5px;
+    }
+  }
 }
