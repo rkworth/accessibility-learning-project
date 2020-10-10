@@ -1,25 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .content {
-  display: flex;
   margin: 70px auto 32px;
   max-width: 960px;
-  flex-direction: column;
-}
-
-.form-control,
-.custom-select {
-  font-size: 14px;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .dialog-backdrop {

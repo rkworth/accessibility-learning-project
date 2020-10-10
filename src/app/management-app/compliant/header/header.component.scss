@@ -1,12 +1,10 @@
-:host {
-  width: 100%;
-}
-
-.title {
+div {
   background-color: cadetblue;
+  padding: 0.35rem 0;
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 0;
+    text-align: center;
   }
 }
